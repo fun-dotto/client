@@ -1,0 +1,86 @@
+name: Reborn
+description: 現 app / web の機能を client に移植する（機能単位で 1 Issue）
+title: "[Reborn] "
+labels: ["Reborn"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        機能単位で作成します。やることの完了は Unit / Integration / VRT、受け入れ基準の達成は E2E で確認します。
+        テスト項目はそのままテストケースとして実装してください。スタブは最小限にし、できる限り実装でテストします（docs/design.md「テスト」）。
+
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: 対象プラットフォーム
+      multiple: true
+      options:
+        - iOS
+        - Android
+        - Web
+    validations:
+      required: true
+
+  - type: textarea
+    id: spec
+    attributes:
+      label: 仕様
+      description: 現 app / web の挙動、画面・ルート、使用する API（Connect RPC / Firebase）、端末内データの移行有無など
+      value: |
+        ### 概要
+
+
+        ### 現行の挙動（app / web）
+        -
+
+        ### 画面・ルート
+        - アプリ:
+        - Web:
+
+        ### 使用する API
+        - Connect RPC:
+        - Firebase:
+
+        ### 端末内データの移行
+        - なし
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: やること
+      description: 実装タスクと、その完了を確認するテスト項目（Unit / Integration / VRT）
+      value: |
+        - [ ] domain: Entity / Repository interface を定義する
+          - [ ] Unit:
+        - [ ] infrastructure: Repository 実装（Proto→Entity 変換・エラーのドメイン化）
+          - [ ] Integration:
+        - [ ] queries: Query hooks・query key を定義する
+          - [ ] Unit:
+        - [ ] apps/app: 画面・コンポーネントを実装する
+          - [ ] Unit:
+          - [ ] VRT:
+        - [ ] apps/web: 画面・コンポーネントを実装する
+          - [ ] Unit:
+          - [ ] VRT:
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 受け入れ基準
+      description: ユーザーから見た振る舞いと、それを確認するテスト項目（E2E：Web は Playwright、iOS / Android は Maestro）
+      value: |
+        - [ ] 〇〇すると △△ が表示される
+          - [ ] E2E (iOS / Android):
+          - [ ] E2E (Web):
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 備考
+      description: バックエンドの Connect 版の対応状況、スタブが必要な理由、関連 Issue など
