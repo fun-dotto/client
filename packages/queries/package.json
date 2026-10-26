@@ -1,0 +1,23 @@
+{
+  "name": "@dotto/queries",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dotto/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5",
+    "react": "^19"
+  },
+  "devDependencies": {
+    "@dotto/config": "workspace:*",
+    "@types/bun": "1.4.4",
+    "@types/react": "~19.3.0"
+  }
+}
