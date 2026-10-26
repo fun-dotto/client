@@ -1,0 +1,13 @@
+{
+  "$schema": "https://github.com/dyoshikawa/rulesync/releases/latest/download/mcp-schema.json",
+  "mcpServers": {
+    "dotto-figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "type": "http",
+    },
+    "dotto-notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "type": "http",
+    },
+  },
+}

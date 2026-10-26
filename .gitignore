@@ -35,3 +35,16 @@ Temporary Items
 *.icloud
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
+
+**/AGENTS.md
+**/CLAUDE.md
+.agents/*
+.claude/*
+.codex/*
+.github/*
+!.github/actions/
+!.github/ISSUE_TEMPLATE/
+!.github/workflows/
+!.github/PULL_REQUEST_TEMPLATE.md
+.mcp.json
+mise.local.toml

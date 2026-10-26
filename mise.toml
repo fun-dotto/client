@@ -1,0 +1,10 @@
+[tools]
+"npm:rulesync" = "38.0.0"
+
+[tasks.bootstrap]
+run = [
+  { task = "rulesync" },
+]
+
+[tasks.rulesync]
+run = "rulesync generate"
