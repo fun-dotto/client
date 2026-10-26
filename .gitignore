@@ -1,3 +1,6 @@
+node_modules/
+*.tsbuildinfo
+
 # Created by https://www.toptal.com/developers/gitignore/api/macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos
 
@@ -48,3 +51,6 @@ Temporary Items
 !.github/PULL_REQUEST_TEMPLATE.md
 .mcp.json
 mise.local.toml
+
+# Bundler binstubs
+/bin/
