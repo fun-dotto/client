@@ -228,7 +228,8 @@ interface は共通で実装だけをアプリ / Web で切り替える場合、
   - Metro / Expo CLI は内部で Node 上で動作するため、Node は mise でバージョンを固定して用意する（開発者が直接 `npm` / `node` を使うことはしない）。
   - `eas build --local` は GitHub Actions のランナー上で実行するため、Bun / Node / Java / Xcode のバージョンはワークフロー（mise・`setup-xcode` 等）で固定する。
 - **Buf**: `buf generate` で `packages/core/src/datasource/api-client` の生成物を出力。プラグインは `@bufbuild/protoc-gen-es`（protobuf-es v2）。
-- **mise**: `bun`・`node`・`java`・`ruby`(必要時)・`gcloud`・`buf` のバージョンを管理。`minimum_release_age = "7d"` は継続。
+- **mise**: `bun`・`node`・`java`・`gcloud`・`buf` のバージョンを管理。`minimum_release_age = "7d"` は継続。
+- **iOS の依存管理**: CocoaPods は使わず Swift Package Manager に一本化する（React Native / Expo の SwiftPM 対応を利用）。`expo prebuild --no-install` で `ios/` を生成した後、Podfile を削除して `react-native spm add` で SwiftPM パッケージを Xcode プロジェクトに注入する。Ruby / Bundler は不要。
 - **TypeScript**: strict。共有 tsconfig を `packages/config` に置く。
 - **Lint / Format**: Biome に一本化（ESLint/Prettier/dart analyze を置き換え）。
 - **テスト**: Unit / Integration は `bun test`（コンポーネントは Testing Library）、VRT は Storybook ベースのスクリーンショットを reg-suit で比較、E2E は Web が Playwright・ネイティブが Maestro。詳細は「テスト」を参照。
