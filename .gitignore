@@ -48,3 +48,6 @@ Temporary Items
 !.github/PULL_REQUEST_TEMPLATE.md
 .mcp.json
 mise.local.toml
+
+node_modules/
+*.tsbuildinfo
