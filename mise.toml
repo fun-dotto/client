@@ -1,14 +1,34 @@
 [settings]
 minimum_release_age = "24h"
 
+[env]
+LANG = "en_US.UTF-8"
+
 [tools]
 buf = "1.75.0"
 bun = "1.4.4"
 node = "26.13.0"
+ruby = "4.0.9"
+"gem:cocoapods" = "1.17.0"
 "npm:rulesync" = "43.4.1"
 
 [tasks.bootstrap]
-run = [{ task = "rulesync" }]
+run = [{ task = "rulesync" }, "bun install"]
 
 [tasks.rulesync]
 run = "rulesync generate"
+
+[tasks.ios]
+description = "iOS アプリを起動する"
+dir = "{{config_root}}/apps/app"
+run = "bun run ios"
+
+[tasks.android]
+description = "Android アプリを起動する"
+dir = "{{config_root}}/apps/app"
+run = "bun run android"
+
+[tasks.web]
+description = "Web の開発サーバーを起動する"
+dir = "{{config_root}}/apps/web"
+run = "bun run dev"

@@ -1,0 +1,32 @@
+{
+  "name": "@dotto/core",
+  "devDependencies": {
+    "@dotto/config": "workspace:*",
+    "@types/bun": "1.4.4"
+  },
+  "peerDependencies": {
+    "expo-application": "*"
+  },
+  "exports": {
+    "./domain": "./src/domain/index.ts",
+    "./application": "./src/application/index.ts",
+    "./infrastructure": "./src/infrastructure/index.ts",
+    "./datasource/app-info": {
+      "types": "./src/datasource/app-info/index.ts",
+      "react-native": "./src/datasource/app-info/native.ts",
+      "browser": "./src/datasource/app-info/web.ts",
+      "node": "./src/datasource/app-info/web.ts",
+      "default": "./src/datasource/app-info/web.ts"
+    }
+  },
+  "peerDependenciesMeta": {
+    "expo-application": {
+      "optional": true
+    }
+  },
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}
