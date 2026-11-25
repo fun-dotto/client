@@ -4,7 +4,7 @@ minimum_release_age = "24h"
 [tools]
 buf = "1.75.0"
 bun = "1.4.4"
-node = "26.13.0"
+node = "26.13.1"
 "npm:rulesync" = "43.4.1"
 
 [tasks.bootstrap]
