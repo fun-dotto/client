@@ -5,7 +5,7 @@ minimum_release_age = "24h"
 buf = "1.75.0"
 bun = "1.4.4"
 node = "26.13.0"
-"npm:rulesync" = "43.4.1"
+"npm:rulesync" = "43.16.0"
 
 [tasks.bootstrap]
 run = [{ task = "rulesync" }]
